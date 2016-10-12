@@ -1,0 +1,23 @@
+//- login buttons
+mixin action-btn(caption,style,action,size)
+    - var type = (typeof style === 'undefined') ? "default" : style
+    unless size
+        button.btn(class="btn-#{type}",type="button",onclick="#{action}")= caption
+    else
+        button.btn(class="btn-#{type} btn-#{size}",type="button",onclick="#{action}")= caption
+
+
+mixin action-btn-primary(caption, action)
+    +action-btn(caption,"primary", action)
+    
+mixin action-btn-info(caption, action)
+    +action-btn(caption,"info", action)
+    
+mixin action-btn-warning(caption, action)
+    +action-btn(caption,"warning", action)
+    
+mixin action-btn-danger(caption, action)
+    +action-btn(caption,"danger", action)
+    
+mixin action-btn-success(caption, action)
+    +action-btn(caption,"success", action)
